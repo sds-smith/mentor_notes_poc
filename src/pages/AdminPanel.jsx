@@ -7,7 +7,7 @@ export default function AdminPanel() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!currentUser) navigate('/');
+        if (!currentUser || !currentUser?.isAdmin) navigate('/');
     }, [currentUser, navigate]);
 
     return (
