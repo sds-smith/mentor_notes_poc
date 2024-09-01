@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,6 +13,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useAuthContext } from '../context/AuthContext';
 
 export default function Header() {
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
     const { currentUser, logIn, logOut } = useAuthContext();
 
     const [anchorEl, setAnchorEl] = useState(null);
@@ -28,6 +31,19 @@ export default function Header() {
 
     const buttonText = currentUser ? "Log Out" : "Log In";
     const handleAuthClick = () => currentUser ? logOut() : logIn('student_mentor');
+
+    const ADMIN_BUTTON_CONFIG = {
+      admin: {
+        text: 'Home',
+        to: `/${currentUser?.role}`  
+      },
+      [currentUser?.role]: {
+        text: 'Admin Panel',
+        to: '/admin'
+      }
+    }
+
+    const adminBtn = ADMIN_BUTTON_CONFIG[pathname.slice(1)];
 
     return (
       <Box sx={{ flexGrow: 1 }}>
@@ -46,6 +62,7 @@ export default function Header() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Mentor Notes
             </Typography>
+            { currentUser?.isAdmin && <Button color="inherit" onClick={()=>navigate(adminBtn?.to)}>{adminBtn?.text}</Button>}
             <Button color="inherit" onClick={handleAuthClick}>{buttonText}</Button>
           </Toolbar>
         </AppBar>

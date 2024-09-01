@@ -6,7 +6,7 @@ export default function Landing() {
     const { currentUser } = useAuthContext();
 
     const resolvedRouteByAuth = {
-        true: '/home',
+        true: `/${currentUser?.role}`,
         false: '/login'
     }
 

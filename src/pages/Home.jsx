@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Grid from '@mui/material/Grid2';
 import Typography from "@mui/material/Typography";
 import FacultyHome from "./FacultyHome";
@@ -8,11 +8,13 @@ import { useAuthContext } from "../context/AuthContext";
 
 export default function Home() {
     const navigate = useNavigate();
+    const { pathname } = useLocation();
     const { currentUser } = useAuthContext();
+    const no_access = currentUser?.role !== pathname.slice(1);
 
     useEffect(() => {
-        if (!currentUser) navigate('/')
-    }, [currentUser, navigate])
+        if (no_access) navigate('/')
+    }, [navigate, no_access])
 
     return (
       <Grid container>

@@ -10,6 +10,7 @@ export const AuthProvider = ({children}) => {
             student_mentor: {
                 first: 'Sally',
                 last: 'Student',
+                isAdmin: true,
                 role
             },
             faculty: {

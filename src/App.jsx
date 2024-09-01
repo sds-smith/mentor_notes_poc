@@ -4,6 +4,7 @@ import Navigation from './routes/Navigation'
 import Landing from './pages/Landing'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import AdminPanel from './pages/AdminPanel'
 import './App.css'
 
 export default function App() {
@@ -13,7 +14,9 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Navigation/>}>
           <Route index element={<Landing/>} />
-          <Route path='/home' element={<Home/>} />
+          <Route path='/admin' element={<AdminPanel/>} />
+          <Route path='/faculty' element={<Home/>} />
+          <Route path='/student_mentor' element={<Home/>} />
           <Route path='/login' element={<Login/>} />
         </Route>
       </Routes>
