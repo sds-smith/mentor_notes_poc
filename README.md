@@ -1,8 +1,5 @@
-# React + Vite
+# Peer Mentor Notes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A proof of concept for a local University. Still very much a rough draft, the application is meant to provide a medium for student peer-mentors to track and report progress, and for faculty advisors to track/ review progress.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with vite/React and MaterialUI.
