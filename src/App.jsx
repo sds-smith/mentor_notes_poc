@@ -2,8 +2,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './routes/Navigation'
 import Landing from './pages/Landing'
-import Home from './pages/Home'
 import Login from './pages/Login'
+import Home from './pages/Home'
 import AdminPanel from './pages/AdminPanel'
 import './App.css'
 

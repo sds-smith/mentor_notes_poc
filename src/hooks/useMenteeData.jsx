@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import getUsers from "../utils/swapi";
+import getUsers from "@/utils/swapi";
 
 export function useMenteeData() {
     const [loading, setLoading] = useState(false);

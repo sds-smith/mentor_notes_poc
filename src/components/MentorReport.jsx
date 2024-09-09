@@ -3,7 +3,7 @@ import AdditionalConcerns from './AdditionalConcerns';
 import SessionAssessment from './SessionAssessment';
 import SessionNotes from './SessionNotes';
 import InterventionRequested from './InterventionRequested';
-import { useMenteeData } from '../hooks/useMenteeData';
+import { useMenteeData } from '@/hooks/useMenteeData';
 import AutoComplete from './AutoComplete';
 
 export default function MentorReport() {

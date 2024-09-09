@@ -1,8 +1,8 @@
 
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
-import AutoComplete from '../components/AutoComplete';
-import { options, label } from '../lib/weeksOptions';
+import AutoComplete from '@/components/AutoComplete';
+import { options, label } from '@/lib/weeksOptions';
 
 export default function SelectWeek({selectedWeek, setSelectedWeek}) {
 
